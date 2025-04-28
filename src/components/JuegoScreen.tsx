@@ -26,7 +26,7 @@ interface JuegoScreenProps {
 }
 
 const JuegoScreen: React.FC<JuegoScreenProps> = ({
-  userName, // La recibimos para potencialmente mostrarla aquí
+  userName, 
   score,
   attempts,
   maxAttempts,
@@ -63,8 +63,8 @@ const JuegoScreen: React.FC<JuegoScreenProps> = ({
                 <PokemonImage pokemon={currentPokemon} isRevealed={isRevealed} />
 
                 
-                {showWinImage && <img src="/img/win.gif" alt="¡Ganaste!" className="mx-auto mt-4 w-24 h-auto" />}
-                {showLossImage && <img src="/img/loss.png" alt="Perdiste" className="mx-auto mt-4 w-24 h-auto" />}
+                {showWinImage && <img src="/assets/winner.jpg" alt="¡Ganaste!" className="mx-auto mt-4 w-30 h-auto" />}
+                {showLossImage && <img src="/assets/loser.jpg" alt="Perdiste" className="mx-auto mt-4 w-40 h-auto" />}
 
                 <RespuestaMessage
                     message={feedbackMessage}

@@ -1,8 +1,6 @@
-// src/components/WelcomeScreen.tsx
 import React, { useState } from 'react';
 
 interface GuelcomeProps {
-  // Función que se llamará cuando el usuario envíe su nombre
   onNameSubmitted: (name: string) => void;
 }
 
@@ -13,7 +11,7 @@ const Guelcome: React.FC<GuelcomeProps> = ({ onNameSubmitted }) => {
     event.preventDefault();
     const name = inputName.trim();
     if (name) {
-      onNameSubmitted(name); // Llama a la función del padre con el nombre
+      onNameSubmitted(name);
     }
   };
 
@@ -39,7 +37,6 @@ const Guelcome: React.FC<GuelcomeProps> = ({ onNameSubmitted }) => {
             <button
                type="submit"
                disabled={inputName.trim() === ''}
-                // Estilos retro para botón
                className="px-6 py-2 bg-pkmn-accent text-pkmn-background rounded-none border-2 border-pkmn-primary hover:bg-pkmn-primary hover:text-pkmn-background disabled:bg-gray-400 disabled:border-gray-500 transition duration-100"
            >
                ¡Empezar a Jugar!

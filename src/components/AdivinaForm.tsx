@@ -3,9 +3,9 @@ import React from 'react';
 interface AdivinaFormProps {
   userGuess: string;
   isGameOver: boolean;
-  isLoading: boolean; // Añadido para deshabilitar mientras carga
+  isLoading: boolean;
   handleInputChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
-  handleGuessSubmit: (event: React.FormEvent<HTMLFormElement>) => void; // Renombrado para claridad
+  handleGuessSubmit: (event: React.FormEvent<HTMLFormElement>) => void;
 }
 
 const AdivinaForm: React.FC<AdivinaFormProps> = ({
@@ -15,7 +15,6 @@ const AdivinaForm: React.FC<AdivinaFormProps> = ({
   handleInputChange,
   handleGuessSubmit
 }) => {
-  // No mostrar el formulario si el juego terminó para este Pokémon
   if (isGameOver) return null;
 
   return (
@@ -32,7 +31,7 @@ const AdivinaForm: React.FC<AdivinaFormProps> = ({
       />
       <button
           type="submit"
-          disabled={isLoading || isGameOver || userGuess.trim() === ''} // Deshabilitar si carga, juego terminado o input vacío
+          disabled={isLoading || isGameOver || userGuess.trim() === ''}
           className="px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600 disabled:bg-gray-400 transition duration-200"
       >
           ¡Adivinar!
